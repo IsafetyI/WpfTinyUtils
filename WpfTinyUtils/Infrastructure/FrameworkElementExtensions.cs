@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,7 @@ namespace WpfTinyUtils.Infrastructure
             if (converter != null)
                 value = converter.ConvertBack(value, prop.PropertyType, null, null);
             prop?.SetValue(data, value);
+            bindingExpr.UpdateTarget();
         }
     }
 }
